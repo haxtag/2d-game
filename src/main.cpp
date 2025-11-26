@@ -11,8 +11,14 @@ int main(int, char**) // Version special du main, ne pas modifier
   Moteur moteur("Mon super jeu vidéo");
 
   // TODO: charger images, creer personnages, etc.
+    Image fond(moteur,"assets/fond.png");
+    Image coffref(moteur,"assets/coffre_ferme.png");
+    Image coffreo(moteur,"assets/coffre_ouvert.png");
 
   bool quitter = false;
+  bool ouvert=false;
+  int pix1=0;
+  int pix2=0;
 
   // Boucle de jeu, appelee a chaque fois que l'ecran doit etre mis a jour
   // (en general, 60 fois par seconde)
@@ -29,6 +35,14 @@ int main(int, char**) // Version special du main, ne pas modifier
           quitter = true;
           break;
         // TODO: gerer les autres evenements
+        case ESPACE_APPUYE:
+            ouvert=true;
+            pix1+=5;
+            pix2+=5;
+            break;
+        case ESPACE_RELACHE:
+            ouvert=false;
+            break;
         default:
           break;
       }
@@ -42,9 +56,22 @@ int main(int, char**) // Version special du main, ne pas modifier
 
     // III. Generation de l'image à afficher
 
+
     moteur.initialiserRendu(); // efface ce qui avait ete affiche precedemment et reinitalise en ecran noir
 
     // TODO: afficher vos personnages, objets, etc.
+        fond.dessiner(0,0);
+
+        if(ouvert==false){
+                coffref.dessiner(pix1,pix2);
+        }
+
+        if(ouvert==true){
+        coffreo.dessiner(pix1,pix2);
+        }
+
+
+
 
     /*
       Affiche l'image en se cadencant sur la frequence de

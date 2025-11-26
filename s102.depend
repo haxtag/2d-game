@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1762415364 source:z:\pjjeux\s102_projet_codeblocks\s102\src\image.cpp
+	<SDL_image.h>
+	<exception>
+	"Image.h"
+
+1762414956 source:z:\pjjeux\s102_projet_codeblocks\s102\src\moteur.cpp
+	<SDL_image.h>
+	"Moteur.h"
+
+1764158243 source:z:\pjjeux\s102_projet_codeblocks\s102\src\main.cpp
+	<vector>
+	"Moteur.h"
+	"Image.h"
+
