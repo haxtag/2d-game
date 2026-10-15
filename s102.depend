@@ -8,8 +8,36 @@
 	<SDL_image.h>
 	"Moteur.h"
 
-1764158243 source:z:\pjjeux\s102_projet_codeblocks\s102\src\main.cpp
+1765969774 source:z:\pjjeux\s102_projet_codeblocks\s102\src\main.cpp
 	<vector>
 	"Moteur.h"
 	"Image.h"
+	"Personnage.h"
+
+1765969709 source:z:\pjjeux\s102_projet_codeblocks\s102\src\personnage.cpp
+	"Personnage.h"
+	<iostream>
+	"Image.h"
+	"Moteur.h"
+
+1765971041 source:z:\pjjeux\s102_projet_codeblocks_f\s102\src\image.cpp
+	<SDL_image.h>
+	<exception>
+	"Image.h"
+
+1765970983 source:z:\pjjeux\s102_projet_codeblocks_f\s102\src\main.cpp
+	<vector>
+	"Moteur.h"
+	"Image.h"
+	"Personnage.h"
+
+1765971035 source:z:\pjjeux\s102_projet_codeblocks_f\s102\src\moteur.cpp
+	<SDL_image.h>
+	"Moteur.h"
+
+1765971007 source:z:\pjjeux\s102_projet_codeblocks_f\s102\src\personnage.cpp
+	"Personnage.h"
+	<iostream>
+	"Image.h"
+	"Moteur.h"
 

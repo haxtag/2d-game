@@ -2,6 +2,7 @@
 
 #include "Moteur.h"
 #include "Image.h"
+#include "Personnage.h"
 
 using namespace std;
 
@@ -14,11 +15,13 @@ int main(int, char**) // Version special du main, ne pas modifier
     Image fond(moteur,"assets/fond.png");
     Image coffref(moteur,"assets/coffre_ferme.png");
     Image coffreo(moteur,"assets/coffre_ouvert.png");
+    Image per(moteur, "assets/personnages.png");
+    Personnage pe(per,0,0,3,0);
+    Personnage ennemi1(per,5*16,16,10,0);
+    Personnage ennemi2(per,16,5*16,4,4);
 
   bool quitter = false;
-  bool ouvert=false;
-  int pix1=0;
-  int pix2=0;
+  //bool ouvert=false;
 
   // Boucle de jeu, appelee a chaque fois que l'ecran doit etre mis a jour
   // (en general, 60 fois par seconde)
@@ -35,14 +38,20 @@ int main(int, char**) // Version special du main, ne pas modifier
           quitter = true;
           break;
         // TODO: gerer les autres evenements
-        case ESPACE_APPUYE:
-            ouvert=true;
-            pix1+=5;
-            pix2+=5;
+        case GAUCHE_APPUYE:
+            pe.regarderGauche();
             break;
-        case ESPACE_RELACHE:
-            ouvert=false;
+
+        case DROITE_APPUYE:
+            pe.regarderDroite();
             break;
+        case HAUT_APPUYE:
+            pe.regarderHaut();
+            break;
+        case BAS_APPUYE:
+            pe.regarderBas();
+            break;
+
         default:
           break;
       }
@@ -61,14 +70,10 @@ int main(int, char**) // Version special du main, ne pas modifier
 
     // TODO: afficher vos personnages, objets, etc.
         fond.dessiner(0,0);
+        pe.dessiner();
+        ennemi1.dessiner();
+        ennemi2.dessiner();
 
-        if(ouvert==false){
-                coffref.dessiner(pix1,pix2);
-        }
-
-        if(ouvert==true){
-        coffreo.dessiner(pix1,pix2);
-        }
 
 
 
